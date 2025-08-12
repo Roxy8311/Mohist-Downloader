@@ -1,0 +1,43 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenLocal()
+        maven { url = 'https://maven.minecraftforge.net/' }
+    }
+}
+
+buildscript {
+    dependencies {
+        classpath('com.google.code.gson:gson') {
+            version {
+                strictly '2.10.1'
+            }
+        }
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
+}
+
+rootProject.name = 'ForgeRoot'
+
+include 'fmlloader'
+include 'fmlcore'
+include 'mclanguage'
+include 'javafmllanguage'
+include 'lowcodelanguage'
+include 'fmlearlydisplay'
+
+include ':mcp'
+include ':fmlonly'
+include ':forge'
+
+project(":mcp").projectDir = file("projects/mcp")
+project(":fmlonly").projectDir = file("projects/fmlonly")
+project(":forge").projectDir = file("projects/forge")
+
+if (!System.env.TEAMCITY_VERSION) {
+    include ':clean'
+    project(":clean").projectDir = file("projects/clean")
+}

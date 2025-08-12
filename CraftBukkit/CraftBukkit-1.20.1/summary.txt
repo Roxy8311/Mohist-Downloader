@@ -1,0 +1,2 @@
+Summary for ../CraftBukkit/craftbukkit-1.20.1.jar
+Decompiled with CFR 0.152
