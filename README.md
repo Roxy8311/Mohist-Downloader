@@ -49,7 +49,3 @@ The script will scan available Mohist versions, download the latest matching ver
 ## License
 
 This script is provided as-is without warranty. Use at your own risk.
-
----
-
-If you want, I can customize it further with usage examples or advanced options!
